@@ -1,0 +1,61 @@
+/*----------------------------------------------
+Z-INDEX UTILITY CLASSES
+
+The effected components/elements from values
+in this sheet are meant to move in-front-of & 
+behind the rest of the application.
+
+All selectors that are not in this file are
+organized into style sheets with names that 
+match their respective components.
+----------------------------------------------*/
+
+/* App 
+-> The wall behind the play */
+
+.Background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(247, 208, 157);
+  position: fixed;
+  z-index: -20;
+}
+
+/* Collapsable Landing Background
+-> The stage-front curtain*/
+
+.Headshot {
+  width: 100%;
+  height: 100%;
+  background: no-repeat center center url('./assets/nerd.webp');
+  background-size: cover;
+  position: fixed;
+}
+._fullscreen {
+  z-index: -10;
+  transition: all 1s, width 1s 600ms, height 1s 600ms, z-index 0s 0s,
+    border-bottom-right-radius 1s 500ms;
+}
+
+._collapsed {
+  width: 16.66vw;
+  height: min(25vw, 25vh);
+  border-bottom-right-radius: 50%;
+  z-index: 10;
+  transition: all 1s, z-index 0s 1s, width 1s 500ms, height 1s 500ms,
+    border-bottom-right-radius 1s 500ms;
+}
+
+/* Top Level Transparent Click
+-> A clickable 4th wall*/
+
+.TopLevelTransparentClick {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 20;
+}
+
+.TopLevelTransparentClick--bottom-of-stack {
+  z-index: -1;
+}
