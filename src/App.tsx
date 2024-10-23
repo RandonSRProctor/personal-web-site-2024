@@ -1,9 +1,24 @@
 // import nerd from './assets/nerd.webp';
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import './App.css';
+import { NavTitleButton } from './Components/NavTitle';
+import { navTitles } from './constants/navTitles';
+const {
+  DEVELOP_SOFTWARE,
+  PRODUCE_MUSIC,
+  BUILD_EXPERIENCES,
+  INVEST_IN_PEOPLE,
+  CONTACT,
+  UNDEFINED,
+} = navTitles;
+import { reducer } from './hooks/reducer';
+
+const initialState = { activeNavTitle: undefined };
 
 function App() {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+  const stateDispatch = useReducer(reducer, initialState);
+
   return (
     <>
       <div className="w-screen h-screen fixed -z-20">
@@ -16,12 +31,24 @@ function App() {
         ></div>
         <div className="w-full h-full bg-blue-400 ">
           <header className="flex">
-            <div className="w-1/6 border border-white"></div>
-            <div className="w-1/6 border border-white">Develop Software</div>
-            <div className="w-1/6 border border-white">Produce Music</div>
-            <div className="w-1/6 border border-white">Build Experiences</div>
-            <div className="w-1/6 border border-white">Invest in People</div>
-            <div className="w-1/6 border border-white">Contact</div>
+            <NavTitleButton stateDispatch={stateDispatch}>
+              {UNDEFINED}
+            </NavTitleButton>
+            <NavTitleButton stateDispatch={stateDispatch}>
+              {DEVELOP_SOFTWARE}
+            </NavTitleButton>
+            <NavTitleButton stateDispatch={stateDispatch}>
+              {PRODUCE_MUSIC}
+            </NavTitleButton>
+            <NavTitleButton stateDispatch={stateDispatch}>
+              {BUILD_EXPERIENCES}
+            </NavTitleButton>
+            <NavTitleButton stateDispatch={stateDispatch}>
+              {INVEST_IN_PEOPLE}
+            </NavTitleButton>
+            <NavTitleButton stateDispatch={stateDispatch}>
+              {CONTACT}
+            </NavTitleButton>
           </header>
         </div>
       </div>
