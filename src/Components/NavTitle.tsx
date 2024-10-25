@@ -15,10 +15,10 @@ export const NavTitleButton = ({
 }: NavTitleProps) => {
   const [state, dispatch] = stateDispatch;
   const isSelected = state.activeNavTitle === children;
-  const extraStyles = isSelected ? 'translate-y-10' : 'translate-y-0';
+  const extraStyles = isSelected ? 'translate-y-20' : 'translate-y-0';
   return (
     <div
-      className={`w-1/6 border border-white ${extraStyles} ${className}`}
+      className={`transition duration-700 w-1/6 border border-white ${extraStyles} ${className}`}
       onClick={() => {
         dispatch({ type: actionTypes.NAV_TITLE_SELECTED, payload: children });
       }}
