@@ -18,12 +18,14 @@ export const NavTitleButton = ({
   const extraStyles = isSelected ? 'translate-y-20' : 'translate-y-0';
   return (
     <div
-      className={`transition duration-700 w-1/6 border border-white ${extraStyles} ${className}`}
+      className={`flex items-center transition duration-700 w-1/6   ${extraStyles} ${className}`}
       onClick={() => {
         dispatch({ type: actionTypes.NAV_TITLE_SELECTED, payload: children });
       }}
     >
-      {children}
+      <span className="shadow bg-white rounded-full text-center text-sm">
+        {children}
+      </span>
     </div>
   );
 };

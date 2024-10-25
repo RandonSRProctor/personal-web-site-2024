@@ -1,7 +1,7 @@
 // import nerd from './assets/nerd.webp';
 import { useReducer, useState } from 'react';
 import './App.css';
-import { NavTitleButton } from './Components/NavTitle';
+import { NavTitleButton } from './Components/NavTitleButton';
 import { navTitles } from './constants/navTitles';
 const {
   DEVELOP_SOFTWARE,
@@ -29,7 +29,7 @@ function App() {
           }
           onClick={() => setIsCollapsed(state => !state)}
         ></div>
-        <div className="w-full h-full bg-blue-400 ">
+        <div className="w-full h-full bg-white ">
           <header className="flex">
             <NavTitleButton stateDispatch={stateDispatch}>
               {UNDEFINED}
