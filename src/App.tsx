@@ -3,53 +3,43 @@ import { useReducer, useState } from 'react';
 import './App.css';
 import { NavTitleButton } from './Components/NavTitleButton';
 import { navTitles } from './constants/navTitles';
-const {
-  DEVELOP_SOFTWARE,
-  PRODUCE_MUSIC,
-  BUILD_EXPERIENCES,
-  INVEST_IN_PEOPLE,
-  CONTACT,
-  UNDEFINED,
-} = navTitles;
 import { reducer } from './hooks/reducer';
 
+const navTitleList = Object.values(navTitles);
 const initialState = { activeNavTitle: undefined };
 
 function App() {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
-  const stateDispatch = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <>
       <div className="w-screen h-screen fixed -z-20">
         <div
           className={
-            'Headshot border border-green-500' +
-            (isCollapsed ? ' _collapsed' : ' _fullscreen')
+            'Headshot z-10' + (isCollapsed ? ' _collapsed' : ' _fullscreen')
           }
           onClick={() => setIsCollapsed(state => !state)}
         ></div>
-        <div className="w-full h-full bg-white ">
-          <header className="flex">
-            <NavTitleButton stateDispatch={stateDispatch}>
-              {UNDEFINED}
-            </NavTitleButton>
-            <NavTitleButton stateDispatch={stateDispatch}>
-              {DEVELOP_SOFTWARE}
-            </NavTitleButton>
-            <NavTitleButton stateDispatch={stateDispatch}>
-              {PRODUCE_MUSIC}
-            </NavTitleButton>
-            <NavTitleButton stateDispatch={stateDispatch}>
-              {BUILD_EXPERIENCES}
-            </NavTitleButton>
-            <NavTitleButton stateDispatch={stateDispatch}>
-              {INVEST_IN_PEOPLE}
-            </NavTitleButton>
-            <NavTitleButton stateDispatch={stateDispatch}>
-              {CONTACT}
-            </NavTitleButton>
+        <div className="w-full h-full">
+          <header className="bg-blue-300 h-16 flex">
+            {navTitleList.map(title => (
+              <NavTitleButton stateDispatch={[state, dispatch]}>
+                {title}
+              </NavTitleButton>
+            ))}
           </header>
+          <div className="BODY">
+            <ul>
+              <li>Software</li>
+              <ul>
+                <li>Use the WHAT, AS measured by</li>
+                <li>Workspace Management System</li>
+                <li>Core Features</li>
+                <li>Written in JS/TS, Java, Go</li>
+              </ul>
+            </ul>
+          </div>
         </div>
       </div>
     </>

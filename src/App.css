@@ -34,17 +34,18 @@ match their respective components.
 }
 ._fullscreen {
   /* z-index: -10; */
-  transition: all 1s, width 1s 600ms, height 1s 600ms, z-index 0s 0s,
-    border-bottom-right-radius 1s 500ms;
+  transition: all 1s, width 1s, height 1s, z-index 0s 0s,
+    border-bottom-right-radius 1s;
 }
 
 ._collapsed {
-  width: 16.66vw;
-  height: min(25vw, 25vh);
+  width: 4rem;
+  /* height: min(25vw, 25vh); */
+  height: 4rem;
   border-bottom-right-radius: 50%;
   /* z-index: 10; */
-  transition: all 1s, z-index 0s 1s, width 1s 500ms, height 1s 500ms,
-    border-bottom-right-radius 1s 500ms;
+  transition: all 1s, z-index 0s 1s, width 1s, height 1s,
+    border-bottom-right-radius 1s;
 }
 
 /* Top Level Transparent Click

@@ -1,10 +1,10 @@
 export const navTitles = {
-  DEVELOP_SOFTWARE: 'Develop Software',
-  PRODUCE_MUSIC: 'Produce Music',
-  BUILD_EXPERIENCES: 'Build Experiences',
-  INVEST_IN_PEOPLE: 'Invest in People',
-  CONTACT: 'Contact',
   UNDEFINED: undefined,
+  DEVELOP_SOFTWARE: 'Software',
+  PRODUCE_MUSIC: 'Music',
+  BUILD_EXPERIENCES: 'Experiences',
+  INVEST_IN_PEOPLE: 'Community',
+  CONTACT: 'Contact',
 } as const;
 
 // creates a type union from object literal
