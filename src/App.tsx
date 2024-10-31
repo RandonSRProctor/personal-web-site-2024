@@ -35,7 +35,7 @@ function App() {
           onClick={() => (isCollapsed ? setIsCollapsed(false) : null)}
         >
           {isCollapsed ? (
-            <div className="text-4xl">RP</div>
+            <div className="text-pink-400 text-4xl">RP</div>
           ) : (
             <div className="pt-4 flex justify-around">
               <button onClick={() => setIsCollapsed(true)}>Blog</button>
