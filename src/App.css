@@ -24,28 +24,29 @@ match their respective components.
 /* Collapsable Landing Background
 -> The stage-front curtain*/
 
-.Headshot {
-  width: 100%;
-  height: 100%;
+.bg-headshot {
   background: no-repeat center center url('./assets/nerd.webp');
-  background-color: aquamarine;
   background-size: cover;
-  position: fixed;
-}
-._fullscreen {
-  /* z-index: -10; */
-  transition: all 1s, width 1s, height 1s, z-index 0s 0s,
-    border-bottom-right-radius 1s;
+  /* background-color: aquamarine; */
 }
 
-._collapsed {
-  width: 4rem;
-  /* height: min(25vw, 25vh); */
-  height: 4rem;
-  border-bottom-right-radius: 50%;
-  /* z-index: 10; */
-  transition: all 1s, z-index 0s 1s, width 1s, height 1s,
-    border-bottom-right-radius 1s;
+.outer-transition_fullscreen {
+  transition: all 1s;
+  width: min(100vw, 100vh);
+  height: min(100vw, 100vh);
+  transform: scale(3);
+}
+.outer-transition_corner {
+  transition: all 1s;
+  transform: scale(1.2);
+}
+.inner-transition_fullscreen {
+  transition: all 1.2s;
+  width: max(100vw, 100vh);
+  height: max(100vw, 100vh);
+}
+.inner-transition_corner {
+  transition: all 1s;
 }
 
 /* Top Level Transparent Click
