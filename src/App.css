@@ -21,11 +21,15 @@ match their respective components.
   z-index: -20;
 }
 
+.NAVBAR {
+  background-color: rgba(red, green, blue, 0.5);
+}
+
 /* Collapsable Landing Background
 -> The stage-front curtain*/
 
 .bg-headshot {
-  background: no-repeat center center url('./assets/nerd.webp');
+  background: no-repeat center center url('./assets/Nigel.jpeg');
   background-size: cover;
   /* background-color: aquamarine; */
 }

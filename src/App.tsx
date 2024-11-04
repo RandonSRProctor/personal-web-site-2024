@@ -17,17 +17,17 @@ function App() {
   return (
     <>
       <div className="BACKGROUNDS w-screen h-screen fixed -z-30">
-        <div
+        {/* <div
           className={
-            'OUTER-HEADSHOT bg-blue-300 border border-yellow-500 fixed z-10 rounded-full ' +
+            'OUTER-HEADSHOT bg-black border border-yellow-500 fixed z-10 rounded-full ' +
             (isCollapsed
               ? ' w-16 h-16 rounded-full outer-transition_corner'
               : 'outer-transition_fullscreen')
           }
-        ></div>
+        ></div> */}
         <div
           className={
-            'INNER_HEADSHOT justify-center absolute z-20 rounded-full bg-headshot bg-blue-300 ' +
+            'INNER_HEADSHOT justify-center absolute z-20  bg-headshot bg-blue-300 ' +
             (isCollapsed
               ? ' flex items-center w-16 h-16 bg-blue-300 rounded-full inner-transition_corner'
               : ' w-screen h-screen inner-transition_fullscreen')
@@ -35,12 +35,27 @@ function App() {
           onClick={() => (isCollapsed ? setIsCollapsed(false) : null)}
         >
           {isCollapsed ? (
-            <div className="text-pink-400 text-4xl">RP</div>
+            <div className="text-pink-400 text-4xl"></div>
           ) : (
-            <div className="pt-4 flex justify-around">
-              <button onClick={() => setIsCollapsed(true)}>Blog</button>
-              <button onClick={() => setIsCollapsed(true)}>About</button>
-              <button onClick={() => setIsCollapsed(true)}>Contact</button>
+            <div className="pb-2 pt-2 flex text-white justify-around">
+              <button
+                className="bg-black bg-opacity-50 p-2 rounded-full"
+                onClick={() => setIsCollapsed(true)}
+              >
+                Blog
+              </button>
+              <button
+                className="bg-black bg-opacity-50 p-2 rounded-full"
+                onClick={() => setIsCollapsed(true)}
+              >
+                About
+              </button>
+              <button
+                className="bg-black bg-opacity-50 p-2 rounded-full"
+                onClick={() => setIsCollapsed(true)}
+              >
+                Contact
+              </button>
             </div>
           )}
         </div>
@@ -55,9 +70,18 @@ function App() {
           </header>
           <div className="BODY">
             <ul>
+              <li>Music</li>
+              <ul>
+                <li>Production</li>
+                <li>Live Performances</li>
+                <li>Studio Collaberations</li>
+                <li>Guitar, Bass, Keys</li>
+              </ul>
+            </ul>
+            <ul>
               <li>Software</li>
               <ul>
-                <li>Use the WHAT, AS measured by</li>
+                <li>Enterprise eCommerce</li>
                 <li>Workspace Management System</li>
                 <li>Core Features</li>
                 <li>Written in JS/TS, Java, Go</li>
