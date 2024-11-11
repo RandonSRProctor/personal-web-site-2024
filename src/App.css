@@ -10,6 +10,10 @@ organized into style sheets with names that
 match their respective components.
 ----------------------------------------------*/
 
+.CONTAINER {
+  container-type: normal;
+}
+
 /* App 
 -> The wall behind the play */
 
