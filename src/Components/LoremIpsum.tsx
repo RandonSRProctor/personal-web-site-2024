@@ -13,5 +13,9 @@ type Props = {
 
 export const LoremIpsum = ({ count = 1, className }: Props) => {
   const loremIpsum = loremIpsumFive.slice(0, count);
-  return loremIpsum.map(entry => <p className={className}>{entry}</p>);
+  return loremIpsum.map((entry, index) => (
+    <p key={index} className={className}>
+      {entry}
+    </p>
+  ));
 };
