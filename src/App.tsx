@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import './App.css';
+// import './App.css';
 import { LoremIpsum } from './Components/LoremIpsum';
+import { TextCard } from './Components/TextCard';
 
 function App() {
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
-
+  window.document.body.classList.add('bg-sky-500');
   // TODO BLOG IT UP
   // Container query your way to success
   // Smnooth scrolling from the viedo
@@ -13,54 +12,60 @@ function App() {
 
   return (
     <>
-      <div
-        className={`LANDING_BUTTONS rounded bg-white bg-opacity-50 fixed z-40 flex flex-col ${
-          isCollapsed ? 'top-0 left-24 p-2' : 'p-4 right-0 top-1/2'
-        }`}
-      >
-        <div className="text-4xl pb-4">
-          {isCollapsed ? null : 'Nigel Proctor'}
+      <div className=" w-full h-full bg-gradient-to-b from-red-300 to-indigo-400">
+        <div className=" pt-8 px-8">
+          <section id="About" className="min-h-screen">
+            <h1 className="text-4xl pb-4">About</h1>
+            <TextCard>
+              <LoremIpsum count={1} />
+            </TextCard>
+          </section>
+          <section id="Blog" className="min-h-screen">
+            <h1 id="Blog" className="text-4xl pb-4">
+              Blog
+            </h1>
+            <TextCard>
+              <LoremIpsum count={1} />
+            </TextCard>
+          </section>
+          <section id="Contact" className="min-h-screen">
+            <h1 id="Contact" className="text-4xl pb-4">
+              Contact
+            </h1>
+            <TextCard>
+              <LoremIpsum count={1} />
+            </TextCard>
+          </section>
         </div>
-        <div className="flex justify-between">
-          {['About', 'Blog', 'Contact'].map((title, index) => (
-            <a
-              href={`#${title}`}
-              onClick={() => setIsCollapsed(isCollapsed => !isCollapsed)}
-              className="border border-black rounded p-1"
-              key={index}
-            >
-              {title}
-            </a>
-          ))}
-        </div>
-      </div>
-      <div
-        className={
-          'NIGEL_PHOTO justify-center absolute z-20 bg-headshot bg-blue-300 ' +
-          (isCollapsed
-            ? ' flex items-center w-24 h-24 rounded-full inner-transition_corner'
-            : ' w-screen h-screen inner-transition_fullscreen')
-        }
-        onClick={() => setIsCollapsed(isCollapsed => !isCollapsed)}
-      >
-        {isCollapsed ? <div className="text-pink-400 text-4xl"></div> : null}
-      </div>
-
-      <header className="bg-blue-600 h-20 sticky top-0"></header>
-      <div className="abslute z-0 w-full h-full">
-        <div className="BODY pt-8 px-8">
-          <h1 id="About" className="text-4xl pb-4">
-            About
-          </h1>
-          <LoremIpsum count={2} className="pb-8" />
-          <h1 id="Blog" className="text-4xl pb-4">
-            Blog
-          </h1>
-          <LoremIpsum count={2} className="pb-8" />
-          <h1 id="Contact" className="text-4xl pb-4">
-            Contact
-          </h1>
-          <LoremIpsum count={2} className="pb-8" />
+        <div className="flex w-full justify-between">
+          <div className=" flex flex-col justify-around items-start fixed bottom-0 left-0">
+            {['Left', 'Motion', 'Bright'].map((title, index) => (
+              <div className="pb-12">
+                <a
+                  href={`#${title}`}
+                  className="bg-white bg-opacity-60 text-2xl rounded pr-1 py-4"
+                  key={index}
+                >
+                  {title}
+                </a>
+              </div>
+            ))}
+          </div>
+          <div>
+            <div className=" flex flex-col justify-around items-end fixed bottom-0 right-0">
+              {['>', 'About', 'Blog', 'Contact'].map((title, index) => (
+                <div className="pb-12">
+                  <a
+                    href={`#${title}`}
+                    className="bg-white bg-opacity-50 text-2xl rounded-l pl-1 py-4"
+                    key={index}
+                  >
+                    {title}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>
