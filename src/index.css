@@ -8,5 +8,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding: 20px;
+  scroll-padding: 70px;
+}
+
+.TOP-scroll-padding {
 }
