@@ -6,8 +6,10 @@ type Props = {
 
 export const TextCard = ({ children }: Props) => {
   return (
-    <div className="bg-white bg-opacity-10 rounded shadow p-2 text-xl">
-      {children}
+    <div className="pb-8">
+      <div className="bg-white bg-opacity-10 rounded shadow p-2 text-xl">
+        {children}
+      </div>
     </div>
   );
 };
