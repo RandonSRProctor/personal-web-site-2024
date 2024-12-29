@@ -2,10 +2,12 @@ import { SideBar } from './SideBar';
 import { Content } from './Content';
 import { TimelineSite } from '../TimelineSite/TimelineSite';
 import { useState } from 'react';
+import { Prism } from '../Prism/Prism';
 
 export const DynamicContent = {
   'Timeline Site': <TimelineSite />,
-  Nothing: null,
+  'Prism': <Prism />,
+  'Nothing': null,
 } as const;
 
 export type DynamicContentTitle = keyof typeof DynamicContent;
