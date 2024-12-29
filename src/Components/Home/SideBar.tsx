@@ -1,22 +1,20 @@
 import { Dispatch } from 'react';
-import { DynamicContentTitle } from './Body';
+import { dynamicContentTitles, DynamicContentTitle } from './DynamicContent';
 
 type SideBarProps = {
-  dynamicContentTitles: DynamicContentTitle[];
   activeContentTitle: DynamicContentTitle;
   setActiveContentTitle: Dispatch<DynamicContentTitle>;
 };
 
 export const SideBar = ({
-  dynamicContentTitles,
   activeContentTitle,
   setActiveContentTitle,
 }: SideBarProps) => {
   return (
     <div className="w-80 p-2 bg-sky-300 shadow rounded-2xl">
       {dynamicContentTitles.map(title => (
-        <_Topic
-          title={title}
+        <_ContentTitle
+          title={title as DynamicContentTitle}
           key={title}
           setActiveContent={setActiveContentTitle}
           isSelected={title === activeContentTitle}
@@ -26,19 +24,19 @@ export const SideBar = ({
   );
 };
 
-type _Topic_Props = {
+type _ContentTitleProps = {
   title: DynamicContentTitle;
   subTopics?: string[];
   setActiveContent: Dispatch<DynamicContentTitle>;
   isSelected: boolean;
 };
 
-const _Topic = ({
+const _ContentTitle = ({
   title,
   subTopics = [],
   setActiveContent,
   isSelected,
-}: _Topic_Props) => {
+}: _ContentTitleProps) => {
   return (
     <div className="pb-2">
       <button

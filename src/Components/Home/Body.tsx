@@ -1,17 +1,7 @@
 import { SideBar } from './SideBar';
 import { Content } from './Content';
-import { TimelineSite } from '../TimelineSite/TimelineSite';
 import { useState } from 'react';
-import { Prism } from '../Prism/Prism';
-
-export const DynamicContent = {
-  'Timeline Site': <TimelineSite />,
-  'Prism': <Prism />,
-  'Nothing': null,
-} as const;
-
-export type DynamicContentTitle = keyof typeof DynamicContent;
-const dynamicContentTitles = Object.keys(DynamicContent);
+import { DynamicContent, DynamicContentTitle } from './DynamicContent';
 
 export const Body = () => {
   const [activeContentTitle, setActiveContentTitle] =
@@ -20,11 +10,12 @@ export const Body = () => {
   return (
     <div className="h-full w-full flex">
       <SideBar
-        dynamicContentTitles={dynamicContentTitles as DynamicContentTitle[]}
         activeContentTitle={activeContentTitle}
         setActiveContentTitle={setActiveContentTitle}
       />
-      <Content>{DynamicContent[activeContentTitle]}</Content>
+      <Content>
+        <DynamicContent title={activeContentTitle} />
+      </Content>
     </div>
   );
 };
