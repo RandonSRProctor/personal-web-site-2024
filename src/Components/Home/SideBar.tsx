@@ -11,15 +11,17 @@ export const SideBar = ({
   setActiveContentTitle,
 }: SideBarProps) => {
   return (
-    <div className="w-80 p-2 bg-sky-300 shadow rounded-2xl">
-      {dynamicContentTitles.map(title => (
-        <_ContentTitle
-          title={title as DynamicContentTitle}
-          key={title}
-          setActiveContent={setActiveContentTitle}
-          isSelected={title === activeContentTitle}
-        />
-      ))}
+    <div>
+      <div className="w-40 fixed bottom-2 left-2 p-2 rounded-2xl bg-sky-200 bg-opacity-40 shadow">
+        {dynamicContentTitles.map(title => (
+          <_ContentTitle
+            title={title as DynamicContentTitle}
+            key={title}
+            setActiveContent={setActiveContentTitle}
+            isSelected={title === activeContentTitle}
+          />
+        ))}
+      </div>
     </div>
   );
 };
@@ -40,9 +42,7 @@ const _ContentTitle = ({
   return (
     <div className="pb-2">
       <button
-        className={`p-1 border border-white w-full rounded-xl ${
-          isSelected ? ' bg-sky-200' : null
-        }`}
+        className={`p-1 w-full rounded-xl ${isSelected ? ' bg-sky-200' : null}`}
         onClick={() => setActiveContent(title)}
       >
         {title}
