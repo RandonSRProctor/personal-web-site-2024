@@ -1,6 +1,6 @@
 export const SideBar = () => {
   return (
-    <div className="w-80 p-2 bg-sky-300 h-full">
+    <div className="w-80 p-2 bg-sky-300 shadow rounded-2xl">
       <_Topic title="Resume" subTopics={['One', 'Two', 'Three']} />
     </div>
   );
