@@ -12,7 +12,7 @@ export const SideBar = ({
 }: SideBarProps) => {
   return (
     <div>
-      <div className="w-40 fixed bottom-2 left-2 p-2 rounded-2xl bg-sky-200 bg-opacity-40 shadow">
+      <div className="w-40 fixed z-20 bottom-2 left-0 p-2 rounded-r-2xl bg-sky-500 bg-opacity-40 backdrop-blur-md font-bold shadow">
         {dynamicContentTitles.map(title => (
           <_ContentTitle
             title={title as DynamicContentTitle}
