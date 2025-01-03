@@ -7,7 +7,7 @@ type Props = {
 export const Landing = ({ setPage }: Props) => {
   return (
     <div className="w-screen h-screen flex items-center justify-center bg-slate-800">
-      <div className="bg-emerald-600 border border-emerald-500 text-orange-100 text-xs rounded flex p-8">
+      <div className="bg-emerald-600 border border-emerald-500 text-orange-100 text-xl rounded flex p-8">
         <div className="pr-2 flex flex-col justify-center">
           <h1 className="text-4xl px-0.5 block flex flex-col items-end">
             <div>Randy</div>
