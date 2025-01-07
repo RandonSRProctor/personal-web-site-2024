@@ -6,8 +6,11 @@ function App() {
   const [page, setPage] = useState<'Landing' | 'Home'>('Landing');
   return (
     <div className="w-screen h-screen">
-      {page === 'Landing' ? <Landing setPage={setPage} /> : null}
-      {page === 'Home' ? <Home /> : null}
+      {/* This is where I put max-w-7xl */}
+      <div className="">
+        {page === 'Landing' ? <Landing setPage={setPage} /> : null}
+        {page === 'Home' ? <Home /> : null}
+      </div>
     </div>
   );
 }

@@ -15,26 +15,33 @@ export const Landing = ({ setPage }: Props) => {
           </h1>
         </div>
         <div className="w-0.5 rounded-full bg-slate-800"></div>
-        <nav className="pl-2">
-          <h2 className="">About:</h2>
-          <ul>
-            <NavLink
-              onClick={() => setPage('Home')}
-              innerText="Career Overview"
-            />
-            <NavLink onClick={() => setPage('Home')} innerText="Resume" />
-          </ul>
-          <h2 className="">Software:</h2>
-          <ul>
-            <NavLink
-              onClick={() => setPage('Home')}
-              innerText="Testing Grounds"
-            />
-          </ul>
-          <h2 className="">Contact:</h2>
-          <ul>
-            <NavLink onClick={() => setPage('Home')} innerText="LinkTree" />
-          </ul>
+        <nav className="flex">
+          <div className="pl-2">
+            <div className="p-2 rounded-l bg-emerald-600">
+              <ul>
+                <NavLink
+                  onClick={() => setPage('Home')}
+                  innerText="Career Overview"
+                />
+                <NavLink
+                  onClick={() => setPage('Home')}
+                  innerText="Resume (PDF)"
+                />
+              </ul>
+            </div>
+          </div>
+
+          <div className="">
+            <div className="p-2 rounded-r bg-emerald-600">
+              <ul>
+                <NavLink
+                  onClick={() => setPage('Home')}
+                  innerText="App Catalog"
+                />
+                <NavLink onClick={() => setPage('Home')} innerText="R&D" />
+              </ul>
+            </div>
+          </div>
         </nav>
       </div>
     </div>
@@ -49,7 +56,7 @@ type NavLinkProps = {
 function NavLink({ onClick, innerText }: NavLinkProps) {
   return (
     <li>
-      <div className="pl-4 flex">
+      <div className="p-1 flex">
         <button
           className="hover:underline"
           onMouseDown={onClick}
