@@ -1,4 +1,4 @@
-import { Prism } from '../../Prism/Prism';
+import { Prism } from '../Prism/Prism';
 import { TimelineSite } from '../../TimelineSite/TimelineSite';
 
 /**
