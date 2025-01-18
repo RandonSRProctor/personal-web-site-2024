@@ -1,5 +1,5 @@
-import { Prism } from '../Prism/Prism';
-import { TimelineSite } from '../TimelineSite/TimelineSite';
+import { Prism } from './Prism/Prism';
+import { TimelineSite } from './TimelineSite/TimelineSite';
 
 /**
  * This is a manifest of all content and their titles.
