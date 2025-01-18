@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Home } from './Components/RAD/Home/Home';
+import { Home } from './Components/RAD/Home';
 import { Landing } from './Components/Landing/Landing';
 
 function App() {
