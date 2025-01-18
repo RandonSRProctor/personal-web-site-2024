@@ -1,7 +1,7 @@
 import { Body } from './Body';
 import { Header } from './Header';
 
-export const Home = () => {
+export const RAD = () => {
   return (
     <>
       <Header />

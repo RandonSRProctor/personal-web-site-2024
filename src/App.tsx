@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Home } from './Components/RAD/Home';
+import { RAD } from './Components/RAD/RAD';
 import { Landing } from './Components/Landing/Landing';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       {/* This is where I put max-w-7xl */}
       <div className="">
         {page === 'Landing' ? <Landing setPage={setPage} /> : null}
-        {page === 'Home' ? <Home /> : null}
+        {page === 'Home' ? <RAD /> : null}
       </div>
     </div>
   );
