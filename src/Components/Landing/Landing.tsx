@@ -1,10 +1,6 @@
-import { Dispatch } from 'react';
+import { Link } from 'react-router';
 
-type Props = {
-  setPage: Dispatch<'Landing' | 'Home'>;
-};
-
-export const Landing = ({ setPage }: Props) => {
+export const Landing = () => {
   return (
     <div className="w-screen h-screen flex items-center justify-center bg-slate-800">
       <div className="bg-emerald-600 border border-emerald-500 text-orange-100 text-xl rounded flex p-8">
@@ -19,14 +15,12 @@ export const Landing = ({ setPage }: Props) => {
           <div className="pl-2">
             <div className="p-2 rounded-l bg-emerald-600">
               <ul>
-                <NavLink
-                  onClick={() => setPage('Home')}
-                  innerText="Career Overview"
-                />
-                <NavLink
-                  onClick={() => setPage('Home')}
-                  innerText="Resume (PDF)"
-                />
+                <Link className="p-1 flex hover:underline" to="/RAD">
+                  Career Overview
+                </Link>
+                <Link className="p-1 flex hover:underline" to="/RAD">
+                  Resume (PDF)
+                </Link>
               </ul>
             </div>
           </div>
@@ -34,11 +28,12 @@ export const Landing = ({ setPage }: Props) => {
           <div className="">
             <div className="p-2 rounded-r bg-emerald-600">
               <ul>
-                <NavLink
-                  onClick={() => setPage('Home')}
-                  innerText="App Catalog"
-                />
-                <NavLink onClick={() => setPage('Home')} innerText="R&D" />
+                <Link className="p-1 flex hover:underline" to="/RAD">
+                  App Catalog
+                </Link>
+                <Link className="p-1 flex hover:underline" to="/RAD">
+                  R&D
+                </Link>
               </ul>
             </div>
           </div>
@@ -47,24 +42,3 @@ export const Landing = ({ setPage }: Props) => {
     </div>
   );
 };
-
-type NavLinkProps = {
-  onClick: () => void;
-  innerText: string;
-};
-
-function NavLink({ onClick, innerText }: NavLinkProps) {
-  return (
-    <li>
-      <div className="p-1 flex">
-        <button
-          className="hover:underline"
-          onMouseDown={onClick}
-          onClick={onClick}
-        >
-          {innerText}
-        </button>
-      </div>
-    </li>
-  );
-}

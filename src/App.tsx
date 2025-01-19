@@ -1,17 +1,13 @@
-import { useState } from 'react';
 import { RAD } from './Components/RAD/RAD';
 import { Landing } from './Components/Landing/Landing';
+import { Route, Routes } from 'react-router';
 
 function App() {
-  const [page, setPage] = useState<'Landing' | 'Home'>('Landing');
   return (
-    <div className="w-screen h-screen">
-      {/* This is where I put max-w-7xl */}
-      <div className="">
-        {page === 'Landing' ? <Landing setPage={setPage} /> : null}
-        {page === 'Home' ? <RAD /> : null}
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="RAD" element={<RAD />} />
+    </Routes>
   );
 }
 
