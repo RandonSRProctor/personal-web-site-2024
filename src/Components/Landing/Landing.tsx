@@ -15,7 +15,7 @@ export const Landing = () => {
           <div className="pl-2">
             <div className="p-2 rounded-l bg-emerald-600">
               <ul>
-                <Link className="p-1 flex hover:underline" to="/RAD">
+                <Link className="p-1 flex hover:underline" to="/Career">
                   Career Overview
                 </Link>
                 <Link className="p-1 flex hover:underline" to="/RAD">
