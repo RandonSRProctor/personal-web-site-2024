@@ -18,7 +18,7 @@ export const Landing = () => {
                 <Link className="p-1 flex hover:underline" to="/Apps">
                   Apps
                 </Link>
-                <Link className="p-1 flex hover:underline" to="/RAD">
+                <Link className="p-1 flex hover:underline" to="/Blog">
                   Blog
                 </Link>
               </ul>
