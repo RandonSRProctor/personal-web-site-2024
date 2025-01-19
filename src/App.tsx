@@ -9,10 +9,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
-      <Route path="RAD" element={<RAD />} />
-      <Route path="Career" element={<Career />} />
       <Route path="Apps" element={<Apps />} />
       <Route path="Blog" element={<Blog />} />
+      <Route path="Career" element={<Career />} />
+      <Route path="RAD" element={<RAD />} />
     </Routes>
   );
 }
