@@ -4,8 +4,8 @@ export const Landing = () => {
   return (
     <div className="w-screen h-screen flex items-center justify-center bg-slate-800">
       <div className="bg-emerald-600 border border-emerald-500 text-orange-100 text-xl rounded flex p-8">
-        <div className="pr-2 flex flex-col justify-center">
-          <h1 className="text-4xl px-0.5 block flex flex-col items-end">
+        <div className="pr-4 flex flex-col justify-center">
+          <h1 className="text-4xl pr-2 block flex flex-col items-end">
             <div>Randy</div>
             <div>Proctor</div>
           </h1>
@@ -15,11 +15,11 @@ export const Landing = () => {
           <div className="pl-2">
             <div className="p-2 rounded-l bg-emerald-600">
               <ul>
-                <Link className="p-1 flex hover:underline" to="/Career">
-                  Career Overview
+                <Link className="p-1 flex hover:underline" to="/Apps">
+                  Apps
                 </Link>
                 <Link className="p-1 flex hover:underline" to="/RAD">
-                  Resume (PDF)
+                  Blog
                 </Link>
               </ul>
             </div>
@@ -28,11 +28,14 @@ export const Landing = () => {
           <div className="">
             <div className="p-2 rounded-r bg-emerald-600">
               <ul>
-                <Link className="p-1 flex hover:underline" to="/RAD">
-                  App Catalog
+                <Link className="p-1 flex hover:underline" to="/Career">
+                  Career
                 </Link>
-                <Link className="p-1 flex hover:underline" to="/RAD">
-                  R&D
+                <Link
+                  className="p-1 flex items-center hover:underline"
+                  to="/RAD"
+                >
+                  R<span className="px-0.5 text-xs">&</span>D
                 </Link>
               </ul>
             </div>
