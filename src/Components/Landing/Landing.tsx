@@ -1,62 +1,75 @@
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 
-const Navigation = () => {
-  return (
-    <div className="bg-emerald-600 border border-emerald-500 text-orange-100 text-xl rounded flex p-8">
-      <div className="pr-4 flex flex-col justify-center">
-        <h1 className="text-4xl pr-2 block flex flex-col items-end">
-          <div>Randy</div>
-          <div>Proctor</div>
-        </h1>
-      </div>
-      <div className="w-0.5 rounded-full bg-slate-800"></div>
-      <nav className="flex">
-        <div className="pl-2">
-          <div className="p-2 rounded-l bg-emerald-600">
-            <ul>
-              <Link className="p-1 flex hover:underline" to="/Apps">
-                Apps
-              </Link>
-              <Link className="p-1 flex hover:underline" to="/Blog">
-                Blog
-              </Link>
-            </ul>
-          </div>
-        </div>
-        <div className="">
-          <div className="p-2 rounded-r bg-emerald-600">
-            <ul>
-              <Link className="p-1 flex hover:underline" to="/Career">
-                Career
-              </Link>
-              <Link className="p-1 flex items-center hover:underline" to="/RAD">
-                R<span className="px-0.5 text-xs">&</span>D
-              </Link>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  );
-};
+const MorphicNav = () => {
+  const [format, setFormat] = useState<'centered' | 'top'>('centered');
 
-const Practice = () => {
-  const [isFull, setIsFull] = useState(false);
+  const determineNavLinkStyle = ({ isActive }: { isActive: boolean }) =>
+    format === 'top' && !isActive ? 'hidden' : 'h-8 p-1 flex hover:underline';
+
   return (
+    // CONTAINER
     <div
       className={`fixed top-0 transition-all duration-1000 flex justify-center items-center comment-bg-green-300 ${
-        isFull ? 'h-14 w-full' : 'h-full w-full rounded-none'
+        format === 'centered' ? 'h-full w-full rounded-none' : 'h-20 w-full'
       }`}
     >
-      <button
-        className={`transition-all duration-1000 bg-green-500 p-2 rounded ${
-          isFull ? 'h-14 w-full rounded-none' : 'h-20 w-36'
+      {/* GREEN NAV MENU */}
+      <div
+        className={`transition-all duration-1000 bg-emerald-600 border border-emerald-500 text-orange-100 text-xl rounded flex ${
+          format === 'centered'
+            ? 'h-36 w-96 p-8'
+            : 'h-20 w-full p-2 rounded-none'
         }`}
-        onClick={() => setIsFull(!isFull)}
+        onClick={() => setFormat(format === 'centered' ? 'top' : 'centered')}
       >
-        Change
-      </button>
+        {/* RANDY PROCTOR */}
+        <div className="pl-4 pr-4 flex flex-col justify-center">
+          <h1 className="text-4xl pr-2 block flex flex-col items-end">
+            <div>Randy</div>
+            <div>Proctor</div>
+          </h1>
+        </div>
+        {/* DIVIDER */}
+        <div className="w-0.5 h-full rounded-full bg-slate-800"></div>
+        {/* NAV LINKS */}
+        <nav className="flex items-center">
+          <div className="pl-2">
+            <div className="p-2 rounded-l bg-emerald-600">
+              <ul>
+                <li>
+                  <NavLink className={determineNavLinkStyle} to="/Apps">
+                    Apps
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={determineNavLinkStyle} to="/Blog">
+                    Blog
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="">
+            <div className="p-2 rounded-r bg-emerald-600">
+              <ul>
+                <li>
+                  <NavLink className={determineNavLinkStyle} to="/Career">
+                    Career
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={determineNavLinkStyle} to="/RAD">
+                    <span>
+                      R<span className="px-0.5 text-xs">&</span>D
+                    </span>
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
     </div>
   );
 };
@@ -64,7 +77,7 @@ const Practice = () => {
 export const Landing = () => {
   return (
     <div className="relative w-screen h-screen flex items-center justify-center bg-slate-800">
-      <Practice />
+      <MorphicNav />
     </div>
   );
 };

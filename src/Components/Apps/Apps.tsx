@@ -6,7 +6,7 @@ export const Apps = () => {
       <header className="bg-blue-100 h-20 flex items-center justify-center">
         <div className="">Randy Proctor Apps</div>
       </header>
-      <Outlet />;
+      <Outlet />
     </>
   );
 };
