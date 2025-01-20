@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
-const MorphicNav = () => {
+export const MorphicNav = () => {
   const [format, setFormat] = useState<'centered' | 'top'>('centered');
 
   const determineNavLinkStyle = ({ isActive }: { isActive: boolean }) =>
@@ -21,14 +21,18 @@ const MorphicNav = () => {
             ? 'h-36 w-96 p-8'
             : 'h-20 w-full p-2 rounded-none'
         }`}
-        onClick={() => setFormat(format === 'centered' ? 'top' : 'centered')}
       >
         {/* RANDY PROCTOR */}
         <div className="pl-4 pr-4 flex flex-col justify-center">
-          <h1 className="text-4xl pr-2 block flex flex-col items-end">
-            <div>Randy</div>
-            <div>Proctor</div>
-          </h1>
+          <Link to="/">
+            <h1
+              className="text-4xl pr-2 block flex flex-col items-end"
+              onClick={() => setFormat('centered')}
+            >
+              <div>Randy</div>
+              <div>Proctor</div>
+            </h1>
+          </Link>
         </div>
         {/* DIVIDER */}
         <div className="w-0.5 h-full rounded-full bg-slate-800"></div>
@@ -39,12 +43,12 @@ const MorphicNav = () => {
               <ul>
                 <li>
                   <NavLink className={determineNavLinkStyle} to="/Apps">
-                    Apps
+                    <span onClick={() => setFormat('top')}>Apps</span>
                   </NavLink>
                 </li>
                 <li>
                   <NavLink className={determineNavLinkStyle} to="/Blog">
-                    Blog
+                    <span onClick={() => setFormat('top')}>Blog</span>
                   </NavLink>
                 </li>
               </ul>
@@ -55,13 +59,16 @@ const MorphicNav = () => {
               <ul>
                 <li>
                   <NavLink className={determineNavLinkStyle} to="/Career">
-                    Career
+                    <span onClick={() => setFormat('top')}>Career</span>
                   </NavLink>
                 </li>
                 <li>
                   <NavLink className={determineNavLinkStyle} to="/RAD">
-                    <span>
-                      R<span className="px-0.5 text-xs">&</span>D
+                    <span onClick={() => setFormat('top')}>
+                      {' '}
+                      <span>
+                        R<span className="px-0.5 text-xs">&</span>D
+                      </span>
                     </span>
                   </NavLink>
                 </li>
@@ -75,9 +82,5 @@ const MorphicNav = () => {
 };
 
 export const Landing = () => {
-  return (
-    <div className="relative w-screen h-screen flex items-center justify-center bg-slate-800">
-      <MorphicNav />
-    </div>
-  );
+  return <div className="w-screen h-screen bg-slate-800"></div>;
 };
