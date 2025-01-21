@@ -49,13 +49,21 @@ export const MorphicNav = ({ format, setFormat }: Props) => {
             <div className="p-2 rounded-l bg-emerald-600">
               <ul>
                 <li>
-                  <NavLink className={determineNavLinkStyle} to="/Apps">
-                    <span onClick={() => setFormat('top')}>Apps</span>
+                  <NavLink
+                    className={determineNavLinkStyle}
+                    to="/Apps"
+                    onClick={() => setFormat('top')}
+                  >
+                    <span>Apps</span>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className={determineNavLinkStyle} to="/Blog">
-                    <span onClick={() => setFormat('top')}>Blog</span>
+                  <NavLink
+                    className={determineNavLinkStyle}
+                    to="/Blog"
+                    onClick={() => setFormat('top')}
+                  >
+                    <span>Blog</span>
                   </NavLink>
                 </li>
               </ul>
@@ -65,13 +73,21 @@ export const MorphicNav = ({ format, setFormat }: Props) => {
             <div className="p-2 rounded-r bg-emerald-600">
               <ul>
                 <li>
-                  <NavLink className={determineNavLinkStyle} to="/Career">
-                    <span onClick={() => setFormat('top')}>Career</span>
+                  <NavLink
+                    className={determineNavLinkStyle}
+                    to="/Career"
+                    onClick={() => setFormat('top')}
+                  >
+                    <span>Career</span>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className={determineNavLinkStyle} to="/RAD">
-                    <span onClick={() => setFormat('top')}>
+                  <NavLink
+                    className={determineNavLinkStyle}
+                    to="/RAD"
+                    onClick={() => setFormat('top')}
+                  >
+                    <span>
                       {' '}
                       <span>
                         R<span className="px-0.5 text-xs">&</span>D
