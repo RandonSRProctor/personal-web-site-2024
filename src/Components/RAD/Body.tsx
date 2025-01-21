@@ -5,7 +5,7 @@ import { DynamicContent, DynamicContentTitle } from './DynamicContent';
 
 export const Body = () => {
   const [activeContentTitle, setActiveContentTitle] =
-    useState<DynamicContentTitle>('Nothing');
+    useState<DynamicContentTitle>('Prism');
 
   return (
     <div className="h-full w-full flex">

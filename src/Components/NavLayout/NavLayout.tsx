@@ -1,0 +1,20 @@
+import { Outlet, useLocation } from 'react-router';
+import { MorphicNav } from './MorphicNav';
+import { useState } from 'react';
+
+export const NavLayout = () => {
+  const [format, setFormat] = useState<'centered' | 'top'>('centered');
+  const location = useLocation();
+  console.log(location);
+  return (
+    <div
+      className={`transition-all delay-500 duration-500 w-screen h-screen bg-slate-800 ' ${
+        format === 'centered' ? ' bg-opacity-100' : ' bg-opacity-0'
+      }`}
+    >
+      <div className="h-20"></div>
+      <MorphicNav format={format} setFormat={setFormat} />
+      <Outlet />
+    </div>
+  );
+};

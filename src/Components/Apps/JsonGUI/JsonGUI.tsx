@@ -21,9 +21,6 @@ export function JsonGUI() {
 
   return (
     <div className="App">
-      <header className="Header">
-        <h1 className="HeaderText">JSON Visualizer</h1>
-      </header>
       <div className="CentralContent flex">
         <div className="TextInputSection">
           <div className="textareaContainer">

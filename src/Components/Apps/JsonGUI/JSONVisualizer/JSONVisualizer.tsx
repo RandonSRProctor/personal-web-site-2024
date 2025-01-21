@@ -45,7 +45,7 @@ function JSONVisualizer({ data }: JSONVisualizerProps) {
 
   return (
     <Context.Provider value={contextState}>
-      <div className="JSONVisualizer h-screen flex flex-col items-center justify-end">
+      <div className="JSONVisualizer flex flex-col items-center justify-end">
         <FloatControl />
         {/** Make a Title that animates fading smoothly handles timing **/}
         <Root
