@@ -28,7 +28,10 @@ export function JsonGUI() {
               className="textarea"
               onChange={handleTextChange}
               value={jsonInput}
-            ></textarea>
+              placeholder={'Example shown:\n\n' + JSON.stringify(testObject)}
+            >
+              {JSON.parse(JSON.stringify(testObject))}
+            </textarea>
           </div>
           <button onClick={visualizeJSONInput} className="TextAreaButton">
             Visualize

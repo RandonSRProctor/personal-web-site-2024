@@ -29,7 +29,11 @@ export const MorphicNav = ({ format, setFormat }: Props) => {
         <div className="pl-4 pr-4 flex flex-col justify-center">
           <Link to="/">
             <h1
-              className="text-4xl pr-2 block flex flex-col items-end"
+              className={`transition-all duration-1000 pr-2 block flex flex-col ${
+                format === 'centered'
+                  ? ' items-end text-4xl'
+                  : ' items-center text-2xl'
+              }`}
               onClick={() => setFormat('centered')}
             >
               <div>Randy</div>

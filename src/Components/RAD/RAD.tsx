@@ -1,10 +1,10 @@
 import { Body } from './Body';
-import { Header } from './Header';
+// import { Header } from './Header';
 
 export const RAD = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Body />
     </>
   );

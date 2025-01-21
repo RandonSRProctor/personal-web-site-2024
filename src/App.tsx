@@ -9,6 +9,7 @@ import { NavLayout } from './Components/NavLayout/NavLayout';
 
 function App() {
   return (
+    // TODO: Set up default!
     <Routes>
       <Route path="/" element={<NavLayout />}>
         <Route path="Apps" element={<Apps />}>
