@@ -1,5 +1,6 @@
 import { Dispatch } from 'react';
-import { Link, NavLink } from 'react-router';
+import { NavLink } from 'react-router';
+import { NameLogo } from './NameLogo';
 
 type Props = {
   format: 'centered' | 'top';
@@ -26,25 +27,10 @@ export const MorphicNav = ({ format, setFormat }: Props) => {
         }`}
       >
         {/* INNER GREEN NAV MENU */}
-        <div className="flex justify-center bg-emerald-500 rounded">
-          {/* RANDY PROCTOR */}
-          <div className="p-4 flex flex-col justify-center">
-            <Link to="/">
-              <h1
-                className={`transition-all duration-1000 pr-2 block flex flex-col ${
-                  format === 'centered'
-                    ? ' items-end text-4xl'
-                    : ' items-center text-2xl'
-                }`}
-                onClick={() => setFormat('centered')}
-              >
-                <div>Randy</div>
-                <div>Proctor</div>
-              </h1>
-            </Link>
-          </div>
+        <div className="flex justify-center">
+          <NameLogo format={format} setFormat={setFormat} />
           {/* DIVIDER */}
-          <div className="w-0.5 h-full rounded-full bg-emerald-600"></div>
+          <div className="w-0.5 h-full rounded-full bg-slate-800"></div>
           {/* NAV LINKS */}
           <nav className="px-4 flex items-center">
             <div className="">
