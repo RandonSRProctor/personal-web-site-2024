@@ -1,6 +1,6 @@
 import { Dispatch } from 'react';
-import { NavLink } from 'react-router';
 import { NameLogo } from './NameLogo';
+import { NavLinks } from './NavLinks';
 
 type Props = {
   format: 'centered' | 'top';
@@ -8,9 +8,6 @@ type Props = {
 };
 
 export const MorphicNav = ({ format, setFormat }: Props) => {
-  const determineNavLinkStyle = ({ isActive }: { isActive: boolean }) =>
-    format === 'top' && !isActive ? 'hidden' : 'h-8 p-1 flex hover:underline';
-
   return (
     // CONTAINER
     <div
@@ -29,64 +26,12 @@ export const MorphicNav = ({ format, setFormat }: Props) => {
         {/* INNER GREEN NAV MENU */}
         <div className="flex justify-center">
           <NameLogo format={format} setFormat={setFormat} />
-          {/* DIVIDER */}
-          <div className="w-0.5 h-full rounded-full bg-slate-800"></div>
-          {/* NAV LINKS */}
-          <nav className="px-4 flex items-center">
-            <div className="">
-              <div className="">
-                <ul>
-                  <li>
-                    <NavLink
-                      className={determineNavLinkStyle}
-                      to="/Apps"
-                      onClick={() => setFormat('top')}
-                    >
-                      <span>Apps</span>
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      className={determineNavLinkStyle}
-                      to="/Blog"
-                      onClick={() => setFormat('top')}
-                    >
-                      <span>Blog</span>
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="">
-              <div className="pl-2">
-                <ul>
-                  <li>
-                    <NavLink
-                      className={determineNavLinkStyle}
-                      to="/Career"
-                      onClick={() => setFormat('top')}
-                    >
-                      <span>Career</span>
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      className={determineNavLinkStyle}
-                      to="/RAD"
-                      onClick={() => setFormat('top')}
-                    >
-                      <span>
-                        {' '}
-                        <span>
-                          R<span className="px-0.5 text-xs">&</span>D
-                        </span>
-                      </span>
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+          <div
+            className={`DIVIDER transition-all duration-1000 h-full rounded-full  ${
+              format === 'top' ? ' bg-emerald-600 w-0' : ' bg-slate-800 w-0.5'
+            }`}
+          ></div>
+          <NavLinks format={format} setFormat={setFormat} />
         </div>
       </div>
     </div>
