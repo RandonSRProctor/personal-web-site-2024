@@ -16,7 +16,7 @@ export const MorphicNav = ({ format, setFormat }: Props) => {
       }`}
     >
       {/* OUTER GREEN NAV MENU */}
-      <div
+      <header
         className={`transition-all duration-1000 bg-emerald-600 border border-emerald-500 text-orange-100 text-xl rounded flex ${
           format === 'centered'
             ? 'h-40 w-96 p-8'
@@ -27,13 +27,21 @@ export const MorphicNav = ({ format, setFormat }: Props) => {
         <div className="flex justify-center">
           <NameLogo format={format} setFormat={setFormat} />
           <div
-            className={`DIVIDER transition-all duration-1000 h-full rounded-full  ${
-              format === 'top' ? ' bg-emerald-600 w-0' : ' bg-slate-800 w-0.5'
+            className={`DIVIDER_OUTER flex items-center transision-all duration-1000 ${
+              format === 'top' ? ' px-2' : ' px-4'
             }`}
-          ></div>
+          >
+            <div
+              className={`DIVIDER transition-all duration-1000 rounded-full  ${
+                format === 'top'
+                  ? 'h-12 bg-slate-800 w-0.5'
+                  : 'h-24 bg-slate-800 w-0.5'
+              }`}
+            ></div>
+          </div>
           <NavLinks format={format} setFormat={setFormat} />
         </div>
-      </div>
+      </header>
     </div>
   );
 };

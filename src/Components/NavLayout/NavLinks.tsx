@@ -11,7 +11,7 @@ export const NavLinks = ({ format, setFormat }: Props) => {
     format === 'top' && !isActive ? 'hidden' : 'h-8 p-1 flex hover:underline';
 
   return (
-    <nav className="px-4 flex items-center">
+    <nav className="pr-4 flex items-center">
       <div className="">
         <div className="">
           <ul>
