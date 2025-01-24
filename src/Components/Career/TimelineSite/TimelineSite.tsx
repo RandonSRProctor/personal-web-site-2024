@@ -5,7 +5,7 @@ const reverseTimelineData = [...timelineData].reverse();
 export const TimelineSite = () => {
   return (
     <div className="">
-      <div className="h-full w-full flex fixed justify-center bg-blue-950">
+      <div className="h-full w-full flex fixed justify-center">
         <div className="bg-yellow-500 h-screen w-2"></div>
       </div>
       <div className="relative z-10 w-full">
