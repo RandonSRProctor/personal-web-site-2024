@@ -1,12 +1,20 @@
 import { Outlet, useLocation } from 'react-router';
 import { MorphicNav } from './MorphicNav';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const NavLayout = () => {
   const location = useLocation();
-  const [format, setFormat] = useState<'centered' | 'top'>(
-    location.pathname === '/' ? 'centered' : 'top'
-  );
+  const [format, setFormat] = useState<'centered' | 'top'>('centered');
+
+  useEffect(() => {
+    if (location.pathname === '/' && format !== 'centered') {
+      setFormat('centered');
+    }
+    if (location.pathname !== '/' && format !== 'top') {
+      setFormat('top');
+    }
+  }, [format, location.pathname]);
+
   return (
     <div className={`w-screen bg-slate-800 `}>
       <div className={`h-20 bg-slate-800 `}></div>
