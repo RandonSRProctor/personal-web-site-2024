@@ -1,5 +1,4 @@
 import { Prism } from './Prism/Prism';
-import { TimelineSite } from './TimelineSite/TimelineSite';
 
 /**
  * This is a manifest of all content and their titles.
@@ -7,7 +6,6 @@ import { TimelineSite } from './TimelineSite/TimelineSite';
  */
 
 export const dynamicContent = {
-  'Timeline Site': TimelineSite,
   Prism: Prism,
   Nothing: null,
 } as const;

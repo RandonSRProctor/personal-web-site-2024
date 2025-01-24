@@ -1,3 +1,5 @@
+import { TimelineSite } from './TimelineSite/TimelineSite';
+
 export const Career = () => {
-  return <p className="p-4">This is the career page</p>;
+  return <TimelineSite />;
 };
