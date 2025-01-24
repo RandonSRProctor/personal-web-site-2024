@@ -8,14 +8,16 @@ export const NavLayout = () => {
     location.pathname === '/' ? 'centered' : 'top'
   );
   return (
-    <div
-      className={`transition-all delay-500 duration-500 w-screen h-screen bg-slate-800 ' ${
-        format === 'centered' ? ' bg-opacity-100' : ' bg-opacity-0'
-      }`}
-    >
-      <div className="h-20"></div>
+    <div className={`w-screen bg-slate-800 `}>
+      <div className={`h-20 bg-slate-800 `}></div>
       <MorphicNav format={format} setFormat={setFormat} />
-      <Outlet />
+      <div
+        className={`min-h-screen transition-all duration-1000 ${
+          format === 'centered' ? 'opacity-0' : 'opacity-100'
+        } `}
+      >
+        <Outlet />
+      </div>
     </div>
   );
 };

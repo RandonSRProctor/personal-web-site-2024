@@ -11,7 +11,7 @@ export const MorphicNav = ({ format, setFormat }: Props) => {
   return (
     // CONTAINER
     <div
-      className={`fixed top-0 transition-all duration-1000 flex justify-center items-center comment-bg-green-300 ${
+      className={`fixed z-20 top-0 transition-all duration-1000 flex justify-center items-center comment-bg-green-300 ${
         format === 'centered' ? 'h-full w-full rounded-none' : 'h-20 w-full'
       }`}
     >
