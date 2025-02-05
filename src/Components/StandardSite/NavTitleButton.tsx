@@ -1,6 +1,6 @@
 import { Dispatch } from 'react';
-import { Action, actionTypes, State } from '../hooks/reducer';
-import { NavTitle } from '../constants/navTitles';
+import { Action, actionTypes, State } from '../../hooks/reducer';
+import { NavTitle } from '../../constants/navTitles';
 
 type NavTitleProps = {
   children: NavTitle;

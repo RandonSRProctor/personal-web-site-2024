@@ -6,7 +6,7 @@ export function makeArrayOfKeys(
     arrayOfKeys = Object.keys(nodeValue);
   }
   if (Array.isArray(nodeValue)) {
-    arrayOfKeys = nodeValue.map((entry, index) => index);
+    arrayOfKeys = nodeValue.map((_entry, index) => index);
   }
   return arrayOfKeys;
 }
