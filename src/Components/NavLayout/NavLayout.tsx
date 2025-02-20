@@ -23,8 +23,7 @@ export const NavLayout = () => {
   return (
     <NavContext.Provider value={format}>
       <DispatchNavContext.Provider value={setFormat}>
-        {/* Full-screen  */}
-        <div className={`w-screen bg-slate-800 `}>
+        <div className={`FIRST DIV FULLSCREEN w-screen bg-slate-800 `}>
           {/* Invisible header placeholder */}
           <div className={`h-20 bg-slate-800 `}></div>
           <MorphicNav />
