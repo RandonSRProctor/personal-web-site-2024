@@ -1,14 +1,13 @@
-import { Dispatch } from 'react';
 import { NavLink } from 'react-router';
+import { useNavContext } from '../../hooks/useNavContext';
 
-type Props = {
-  format: 'centered' | 'top';
-  setFormat: Dispatch<'centered' | 'top'>;
-};
+export const NavLinks = () => {
+  const [navFormat, setNavFormat] = useNavContext();
 
-export const NavLinks = ({ format, setFormat }: Props) => {
   const determineNavLinkStyle = ({ isActive }: { isActive: boolean }) =>
-    format === 'top' && !isActive ? 'hidden' : 'h-8 p-1 flex hover:underline';
+    navFormat === 'top' && !isActive
+      ? 'hidden'
+      : 'h-8 p-1 flex hover:underline';
 
   return (
     <nav className="pr-4 flex items-center">
@@ -19,7 +18,7 @@ export const NavLinks = ({ format, setFormat }: Props) => {
               <NavLink
                 className={determineNavLinkStyle}
                 to="/Apps"
-                onClick={() => setFormat('top')}
+                onClick={() => setNavFormat('top')}
               >
                 <span>Apps</span>
               </NavLink>
@@ -28,7 +27,7 @@ export const NavLinks = ({ format, setFormat }: Props) => {
               <NavLink
                 className={determineNavLinkStyle}
                 to="/Blog"
-                onClick={() => setFormat('top')}
+                onClick={() => setNavFormat('top')}
               >
                 <span>Blog</span>
               </NavLink>
@@ -43,7 +42,7 @@ export const NavLinks = ({ format, setFormat }: Props) => {
               <NavLink
                 className={determineNavLinkStyle}
                 to="/Career"
-                onClick={() => setFormat('top')}
+                onClick={() => setNavFormat('top')}
               >
                 <span>Career</span>
               </NavLink>
@@ -52,7 +51,7 @@ export const NavLinks = ({ format, setFormat }: Props) => {
               <NavLink
                 className={determineNavLinkStyle}
                 to="/RAD"
-                onClick={() => setFormat('top')}
+                onClick={() => setNavFormat('top')}
               >
                 <span>
                   {' '}
