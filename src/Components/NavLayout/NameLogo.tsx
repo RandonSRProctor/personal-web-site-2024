@@ -8,15 +8,15 @@ export const NameLogo = () => {
     <div className="pl-4 flex flex-col justify-center">
       <Link to="/">
         <h1
-          className={`transition-all duration-1000 pr-1 block flex flex-col ${
+          className={`transition-all duration-1000 pr-1 block flex  ${
             navFormat === 'centered'
-              ? ' items-end text-4xl'
-              : ' items-center text-2xl'
+              ? ' flex-col items-end text-4xl'
+              : ' flex-row items-center text-2xl'
           }`}
           onClick={() => setNavFormat('centered')}
         >
-          <div>Randy</div>
-          <div>Proctor</div>
+          <div>R{navFormat === 'centered' ? <span>andy</span> : null}</div>
+          <div>P{navFormat === 'centered' ? <span>roctor</span> : null}</div>
         </h1>
       </Link>
     </div>
