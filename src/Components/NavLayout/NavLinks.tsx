@@ -10,44 +10,60 @@ export const NavLinks = () => {
       : 'h-8 p-1 flex hover:underline';
 
   return (
-    <nav className="pr-4 flex items-center">
+    <nav className="w-48 flex items-center">
       <div className="">
-        <div className="">
-          <ul>
-            <li>
+        <ul>
+          <li>
+            <NavLink
+              className={determineNavLinkStyle}
+              to="/Apps"
+              onClick={() => setNavFormat('top')}
+            >
+              <span>Apps</span>
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              className={determineNavLinkStyle}
+              to="/Career"
+              onClick={() => setNavFormat('top')}
+            >
+              <span>Career</span>
+            </NavLink>
+          </li>
+          {/* <li>
               <NavLink
-                className={determineNavLinkStyle}
-                to="/Apps"
-                onClick={() => setNavFormat('top')}
+              className={determineNavLinkStyle}
+              to="/Blog"
+              onClick={() => setNavFormat('top')}
               >
-                <span>Apps</span>
+              <span>Blog</span>
               </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={determineNavLinkStyle}
-                to="/Blog"
-                onClick={() => setNavFormat('top')}
-              >
-                <span>Blog</span>
-              </NavLink>
-            </li>
-          </ul>
-        </div>
+              </li> */}
+        </ul>
       </div>
-      <div className="">
-        <div className="pl-2">
-          <ul>
-            <li>
-              <NavLink
-                className={determineNavLinkStyle}
-                to="/Career"
-                onClick={() => setNavFormat('top')}
-              >
-                <span>Career</span>
-              </NavLink>
-            </li>
-            <li>
+      <div className="pl-2">
+        <ul>
+          <li>
+            <NavLink
+              className={determineNavLinkStyle}
+              to="/About"
+              onClick={() => setNavFormat('top')}
+            >
+              <span>About</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={determineNavLinkStyle}
+              to="/Contact"
+              onClick={() => setNavFormat('top')}
+            >
+              <span>Contact</span>
+            </NavLink>
+          </li>
+          {/* <li>
               <NavLink
                 className={determineNavLinkStyle}
                 to="/RAD"
@@ -60,9 +76,8 @@ export const NavLinks = () => {
                   </span>
                 </span>
               </NavLink>
-            </li>
-          </ul>
-        </div>
+            </li> */}
+        </ul>
       </div>
     </nav>
   );

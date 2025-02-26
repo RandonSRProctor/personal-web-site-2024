@@ -10,10 +10,8 @@ export const Breadcrumb = () => {
         {firstPath}
       </Link>
       {secondPath ? (
-        <Link to={`/${firstPath}/${secondPath}`}>
-          &nbsp;
-          <span className="text-slate-800">/</span>
-          &nbsp;
+        <Link className="flex" to={`/${firstPath}/${secondPath}`}>
+          <span>:&nbsp;&nbsp;</span>
           <span className="hover:underline">{secondPath}</span>
         </Link>
       ) : null}

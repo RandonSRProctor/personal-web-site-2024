@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router';
 import { MorphicNav } from './MorphicNav';
 import { useEffect, useState } from 'react';
 import { DispatchNavContext, NavContext } from '../../hooks/useNavContext';
+import { NavFormat } from '../../types';
 
 /**
  * Invisible full-screen layer that wraps MorphicNav and manipulates its position
@@ -9,7 +10,7 @@ import { DispatchNavContext, NavContext } from '../../hooks/useNavContext';
 
 export const NavLayout = () => {
   const location = useLocation();
-  const [format, setFormat] = useState<'centered' | 'top'>('centered');
+  const [format, setFormat] = useState<NavFormat>('centered');
 
   useEffect(() => {
     if (location.pathname === '/' && format !== 'centered') {
@@ -29,7 +30,7 @@ export const NavLayout = () => {
           <MorphicNav />
           {/* NOTE: body in a div is a no-no.  This will need re-aranging.  Do we need the fullscreen div? */}
           <body
-            className={` min-h-screen transition-all duration-1000 ${
+            className={` min-h-[calc(100vh-80px)] transition-all duration-1000 ${
               format === 'centered' ? 'opacity-0' : 'opacity-100'
             } `}
           >

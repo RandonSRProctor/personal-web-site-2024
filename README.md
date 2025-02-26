@@ -14,7 +14,10 @@ npm run dev
 - [ ] Create Nav Category Selection Dropdown
 - [ ] Randy Proctor -> RSRP
 - [ ] Sub-item selection
-- [ ] Fix Header Scroll Gap
+- [ ] Fix Header Scroll Gap & Scroll Space Width
+- [ ] Fix issue with transition & placement
+- [ ] Add a Reference page:
+  - Typing out an object
 
 ### Dream List:
 

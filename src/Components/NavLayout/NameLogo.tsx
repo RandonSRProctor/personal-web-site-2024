@@ -1,24 +1,35 @@
 import { Link } from 'react-router';
 import { useNavContext } from '../../hooks/useNavContext';
+import { Div } from '../utility/Div';
 
 export const NameLogo = () => {
-  const [navFormat, setNavFormat] = useNavContext();
+  const [, setNavFormat] = useNavContext();
 
   return (
-    <div className="pl-4 flex flex-col justify-center">
-      <Link to="/">
+    <Div
+      className="transition-all duration-1000 flex flex-col justify-center"
+      centered="pl-4"
+      top="pl-4"
+    >
+      <Link
+        className="rounded-full flex items-center bg-yellow-600 shadow-xl"
+        to="/"
+      >
         <h1
-          className={`transition-all duration-1000 pr-1 block flex  ${
-            navFormat === 'centered'
-              ? ' flex-col items-end text-4xl'
-              : ' flex-row items-center text-2xl'
-          }`}
+          className="transition-all duration-1000 block flex flex-col"
           onClick={() => setNavFormat('centered')}
         >
-          <div>R{navFormat === 'centered' ? <span>andy</span> : null}</div>
-          <div>P{navFormat === 'centered' ? <span>roctor</span> : null}</div>
+          <div className="flex items-center ">
+            <Div
+              className="transition-all duration-1000 overflow-hidden pb-1 flex items-center justify-center"
+              centered="w-24 h-24 text-4xl"
+              top="w-16 h-16 text-xl hover:underline"
+            >
+              <div>rsrp</div>
+            </Div>
+          </div>
         </h1>
       </Link>
-    </div>
+    </Div>
   );
 };

@@ -9,7 +9,7 @@ type Props = {
 };
 
 /**
- * A standard `<div>` element with style props to ergonomically add styles based on navFormat state
+ * A standard `<div>` element with extra props to cleanly add styles based on navFormat state
  */
 
 export const Div = ({ children, className, top, centered }: Props) => {
