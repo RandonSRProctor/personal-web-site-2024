@@ -28,4 +28,9 @@ export const timelineData: TimelineData = [
     title: 'Workspace MGMT System',
     text: 'Created ',
   },
+  {
+    year: '2025',
+    title: 'Kroger Core Navigation Upgrade',
+    text: 'Increased SEO Traffic by 20% ',
+  },
 ];

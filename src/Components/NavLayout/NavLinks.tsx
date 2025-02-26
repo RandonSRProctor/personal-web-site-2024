@@ -7,13 +7,13 @@ export const NavLinks = () => {
   const determineNavLinkStyle = ({ isActive }: { isActive: boolean }) =>
     navFormat === 'top' && !isActive
       ? 'hidden'
-      : 'h-8 p-1 flex hover:underline';
+      : 'h-8 p-1  flex hover:underline';
 
   return (
     <nav className="w-48 flex items-center">
       <div className="">
         <ul>
-          <li>
+          <li className="pb-2">
             <NavLink
               className={determineNavLinkStyle}
               to="/Apps"
@@ -45,7 +45,7 @@ export const NavLinks = () => {
       </div>
       <div className="pl-2">
         <ul>
-          <li>
+          <li className="pb-2">
             <NavLink
               className={determineNavLinkStyle}
               to="/About"

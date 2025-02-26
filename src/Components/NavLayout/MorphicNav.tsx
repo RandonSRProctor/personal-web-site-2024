@@ -2,7 +2,6 @@ import { NameLogo } from './NameLogo';
 import { NavLinks } from './NavLinks';
 import { useNavContext } from '../../hooks/useNavContext';
 import { Breadcrumb } from './Breadcrumb';
-import { Divider } from './Divider';
 import { Div } from '../utility/Div';
 
 /**
@@ -24,21 +23,20 @@ export const MorphicNav = () => {
       top="h-20 w-full"
     >
       {/* OUTER GREEN NAV MENU */}
-      <header
-        // style={{ boxShadow: 'inset  1px 1px 5px 1px black ' }}
+      <nav
         className={`transition-all duration-1000 bg-emerald-600  text-orange-100 text-xl rounded flex ${
           navFormat === 'centered'
-            ? 'h-40 w-96 p-8'
+            ? 'h-52 w-96'
             : 'h-20 w-full py- rounded-none'
         }`}
       >
         {/* INNER GREEN NAV MENU */}
-        <div className="flex justify-center">
+        <div className="flex content-center">
           <NameLogo />
-          <Divider />
+          <Div top="w-2" centered="w-4" />
           {navFormat === 'centered' ? <NavLinks /> : <Breadcrumb />}
         </div>
-      </header>
+      </nav>
     </Div>
   );
 };

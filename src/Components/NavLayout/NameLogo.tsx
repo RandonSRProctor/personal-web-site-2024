@@ -8,7 +8,7 @@ export const NameLogo = () => {
   return (
     <Div
       className="transition-all duration-1000 flex flex-col justify-center"
-      centered="pl-4"
+      centered="pl-6"
       top="pl-4"
     >
       <Link
@@ -22,10 +22,21 @@ export const NameLogo = () => {
           <div className="flex items-center ">
             <Div
               className="transition-all duration-1000 overflow-hidden pb-1 flex items-center justify-center"
-              centered="w-24 h-24 text-4xl"
+              centered="w-0 h-24"
               top="w-16 h-16 text-xl hover:underline"
             >
               <div>rsrp</div>
+            </Div>
+
+            <Div
+              className="transition-all duration-1000 overflow-hidden pb-1 flex items-center justify-center"
+              centered="w-40 h-40"
+              top="w-0 h-0"
+            >
+              <div className="flex flex-col items-center text-4xl">
+                <div>Randy</div>
+                <div>Proctor</div>
+              </div>
             </Div>
           </div>
         </h1>
