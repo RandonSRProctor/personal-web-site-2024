@@ -26,7 +26,7 @@ export const MorphicNav = () => {
       <nav
         className={`transition-all duration-1000 bg-emerald-600  text-orange-100 text-xl rounded flex ${
           navFormat === 'centered'
-            ? 'h-52 w-96'
+            ? 'h-56 w-96'
             : 'h-20 w-full py- rounded-none'
         }`}
       >

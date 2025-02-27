@@ -3,7 +3,7 @@ import { useNavContext } from '../../hooks/useNavContext';
 import { Div } from '../utility/Div';
 
 export const NameLogo = () => {
-  const [, setNavFormat] = useNavContext();
+  const [navFormat, setNavFormat] = useNavContext();
 
   return (
     <Div
@@ -12,7 +12,9 @@ export const NameLogo = () => {
       top="pl-4"
     >
       <Link
-        className="rounded-full flex items-center bg-yellow-600 shadow-xl"
+        className={`transition-all duration-1000 border border-red-900 rounded-full flex items-center bg-yellow-600 shadow-red-900 ${
+          navFormat === 'top' ? 'shadow-md' : 'shadow-xl'
+        }`}
         to="/"
       >
         <h1
@@ -29,11 +31,11 @@ export const NameLogo = () => {
             </Div>
 
             <Div
-              className="transition-all duration-1000 overflow-hidden pb-1 flex items-center justify-center"
-              centered="w-40 h-40"
+              className="transition-all duration-1000 overflow-hidden pb- flex items-center justify-center"
+              centered="w-36 h-36"
               top="w-0 h-0"
             >
-              <div className="flex flex-col items-center text-4xl">
+              <div className="flex flex-col items-center text-3xl">
                 <div>Randy</div>
                 <div>Proctor</div>
               </div>
