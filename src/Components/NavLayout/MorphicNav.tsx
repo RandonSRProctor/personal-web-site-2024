@@ -1,8 +1,6 @@
-import { NameLogo } from './NameLogo';
-import { NavLinks } from './NavLinks';
-import { Breadcrumb } from './Breadcrumb';
 import { Div } from '../utility/Div';
 import { useLocation } from 'react-router';
+import { ReactElement } from 'react';
 
 /**
  * A navigation menu that changes with the state of the user journey.
@@ -12,7 +10,7 @@ import { useLocation } from 'react-router';
  * - top: Header at top of page
  */
 
-export const MorphicNav = () => {
+export const MorphicNav = ({ children }: { children?: ReactElement[] }) => {
   const location = useLocation();
   const isRootPath = location.pathname === '/';
 
@@ -32,9 +30,7 @@ export const MorphicNav = () => {
       >
         {/* INNER GREEN NAV MENU */}
         <div className="bg-sky-800 bg-opacity-80 w-full flex content-center">
-          <NameLogo />
-          <Div top="w-2" centered="w-4" />
-          {isRootPath ? <NavLinks /> : <Breadcrumb />}
+          {children}
         </div>
       </nav>
     </Div>
