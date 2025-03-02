@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router';
 import { MorphicNav } from './MorphicNav';
-import { NameLogo } from '../NameLogo';
+import { NameLogo } from './NameLogo';
 import { Div } from '../utility/Div';
 import { NavLinks } from './NavLinks';
 import { Breadcrumb } from './Breadcrumb';

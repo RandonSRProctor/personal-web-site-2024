@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router';
-import { Div } from './utility/Div';
+import { Div } from '../utility/Div';
 
 export const NameLogo = () => {
   const location = useLocation();
