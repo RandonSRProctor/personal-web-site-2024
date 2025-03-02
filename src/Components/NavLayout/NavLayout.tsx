@@ -2,7 +2,7 @@ import { Outlet, useLocation } from 'react-router';
 import { MorphicNav } from './MorphicNav';
 
 /**
- * Invisible full-screen layer that wraps MorphicNav and manipulates its position
+ * @deprecated Relic from a previous attempt to craete a "morphic" nav experience that did not pan out.
  */
 
 export const NavLayout = () => {
