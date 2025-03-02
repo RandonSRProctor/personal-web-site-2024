@@ -1,34 +1,24 @@
-import { NavLink } from 'react-router';
-import { useNavContext } from '../../hooks/useNavContext';
+import { NavLink, useLocation } from 'react-router';
 
 export const NavLinks = () => {
-  const [navFormat, setNavFormat] = useNavContext();
+  const location = useLocation();
+  const isRootPath = location.pathname === '/';
 
   const determineNavLinkStyle = ({ isActive }: { isActive: boolean }) =>
-    navFormat === 'top' && !isActive
-      ? 'hidden'
-      : 'h-8 p-1  flex hover:underline';
+    !isRootPath && !isActive ? 'hidden' : 'h-8 p-1  flex hover:underline';
 
   return (
-    <nav className="w-48 flex items-center">
+    <nav className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] w-48 flex items-center">
       <div className="">
         <ul>
           <li className="pb-2">
-            <NavLink
-              className={determineNavLinkStyle}
-              to="/Apps"
-              onClick={() => setNavFormat('top')}
-            >
+            <NavLink className={determineNavLinkStyle} to="/Apps">
               <span>Apps</span>
             </NavLink>
           </li>
 
           <li>
-            <NavLink
-              className={determineNavLinkStyle}
-              to="/Career"
-              onClick={() => setNavFormat('top')}
-            >
+            <NavLink className={determineNavLinkStyle} to="/Career">
               <span>Career</span>
             </NavLink>
           </li>
@@ -36,7 +26,6 @@ export const NavLinks = () => {
               <NavLink
               className={determineNavLinkStyle}
               to="/Blog"
-              onClick={() => setNavFormat('top')}
               >
               <span>Blog</span>
               </NavLink>
@@ -46,20 +35,12 @@ export const NavLinks = () => {
       <div className="pl-2">
         <ul>
           <li className="pb-2">
-            <NavLink
-              className={determineNavLinkStyle}
-              to="/About"
-              onClick={() => setNavFormat('top')}
-            >
+            <NavLink className={determineNavLinkStyle} to="/About">
               <span>About</span>
             </NavLink>
           </li>
           <li>
-            <NavLink
-              className={determineNavLinkStyle}
-              to="/Contact"
-              onClick={() => setNavFormat('top')}
-            >
+            <NavLink className={determineNavLinkStyle} to="/Contact">
               <span>Contact</span>
             </NavLink>
           </li>
@@ -67,7 +48,6 @@ export const NavLinks = () => {
               <NavLink
                 className={determineNavLinkStyle}
                 to="/RAD"
-                onClick={() => setNavFormat('top')}
               >
                 <span>
                   {' '}

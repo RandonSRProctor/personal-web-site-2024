@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { useNavContext } from '../../hooks/useNavContext';
+import { useLocation } from 'react-router';
 
 type Props = {
   children?: ReactNode;
@@ -13,15 +13,11 @@ type Props = {
  */
 
 export const Div = ({ children, className, top, centered }: Props) => {
-  const [navFormat] = useNavContext();
-
-  const dynamicStyle = {
-    top,
-    centered,
-  };
+  const location = useLocation();
+  const dynamicStyles = location.pathname === '/' ? centered : top;
 
   return (
-    <div className={`${className}  ${dynamicStyle[navFormat]}`}>
+    <div className={`${className}  ${dynamicStyles}`}>
       {children ? children : null}
     </div>
   );

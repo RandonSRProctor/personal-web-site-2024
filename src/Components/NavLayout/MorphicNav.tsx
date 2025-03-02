@@ -1,8 +1,8 @@
 import { NameLogo } from './NameLogo';
 import { NavLinks } from './NavLinks';
-import { useNavContext } from '../../hooks/useNavContext';
 import { Breadcrumb } from './Breadcrumb';
 import { Div } from '../utility/Div';
+import { useLocation } from 'react-router';
 
 /**
  * A navigation menu that changes with the state of the user journey.
@@ -13,7 +13,8 @@ import { Div } from '../utility/Div';
  */
 
 export const MorphicNav = () => {
-  const [navFormat] = useNavContext();
+  const location = useLocation();
+  const isRootPath = location.pathname === '/';
 
   return (
     // CONTAINER
@@ -24,17 +25,16 @@ export const MorphicNav = () => {
     >
       {/* OUTER GREEN NAV MENU */}
       <nav
-        className={`transition-all duration-1000 bg-emerald-600  text-orange-100 text-xl rounded flex ${
-          navFormat === 'centered'
-            ? 'h-56 w-96'
-            : 'h-20 w-full py- rounded-none'
-        }`}
+        className={`bg-[url("/src/assets/noise.svg")] to-blue-500 overflow-hidden shadow-sm shadow-sky-5
+          00 transition-all duration-1000 shadow shadow-2xl text-orange-100 text-xl rounded flex ${
+            isRootPath ? 'h-56 w-96' : 'h-20 w-full py- rounded-none'
+          }`}
       >
         {/* INNER GREEN NAV MENU */}
-        <div className="flex content-center">
+        <div className="bg-sky-800 bg-opacity-80 w-full flex content-center">
           <NameLogo />
           <Div top="w-2" centered="w-4" />
-          {navFormat === 'centered' ? <NavLinks /> : <Breadcrumb />}
+          {isRootPath ? <NavLinks /> : <Breadcrumb />}
         </div>
       </nav>
     </Div>
