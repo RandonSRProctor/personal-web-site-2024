@@ -14,7 +14,7 @@ export const Root = () => {
             isRootPath ? 'opacity-100 h-[calc(100vh-8rem)]' : 'opacity-0'
           }`}
         >
-          <LandingMenu />
+          {isRootPath ? <LandingMenu /> : null}
         </section>
         <section
           className={`transition-all duration-500 ${
