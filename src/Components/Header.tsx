@@ -5,6 +5,7 @@ import { NavLinkFastClick } from './utility/NavLinkFastClick';
 export const Header = () => {
   const location = useLocation();
   const isRootPath = location.pathname === '/';
+  const firstPath = location.pathname.split('/')[1];
 
   return (
     <header className="sticky top-0 h-24 pb-4">
@@ -17,13 +18,8 @@ export const Header = () => {
             }`}
           >
             <li className="pl-4">
-              <NavLinkFastClick className="hover:underline" to="/Apps">
-                <span>Apps</span>
-              </NavLinkFastClick>
-            </li>
-            <li className="pl-4">
-              <NavLinkFastClick className="hover:underline" to="/Career">
-                <span>Career</span>
+              <NavLinkFastClick to={`/${firstPath}`}>
+                <span>{firstPath}</span>
               </NavLinkFastClick>
             </li>
           </ul>

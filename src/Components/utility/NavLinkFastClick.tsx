@@ -6,5 +6,7 @@ export const NavLinkFastClick = (props: NavLinkProps) => {
     e.stopPropagation();
     navigate(props.to);
   };
-  return <NavLink onMouseDown={fastClick} {...props} />;
+  return (
+    <NavLink className="hover:underline" onMouseDown={fastClick} {...props} />
+  );
 };
