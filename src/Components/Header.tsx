@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 h-24 pb-4">
-      <div className="flex text-white bg-slate-700 h-full overflow-hidden rounded-2xl p-2 border border-slate-600 bg-opacity-70 backdrop-blur-sm">
+      <div className="flex text-white bg-slate-700 h-full overflow-hidden rounded-2xl p-2 border border-slate-500 bg-opacity-70 backdrop-blur-sm">
         <NameLogo />
         {isRootPath ? null : (
           <ul
