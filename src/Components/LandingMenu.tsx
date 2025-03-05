@@ -9,33 +9,26 @@ export const LandingMenu = () => {
     <div className="flex flex-col justify-center items-center h-4/5">
       <ul className="flex justify-center text-white">
         <li className="p-4 sm:p-8">
-          <LinkSquare
-            Icon={AppWindowMac}
-            to="/Apps"
-            text="Apps"
-            bgStyles="pink"
-          />
+          <LinkSquare Icon={AppWindowMac} to="/Apps" theme="pink">
+            Apps
+          </LinkSquare>
         </li>
         <li className="p-4 sm:p-8">
-          <LinkSquare
-            Icon={BookOpenText}
-            to="/Career"
-            text="Career"
-            bgStyles="purple"
-          />
+          <LinkSquare Icon={BookOpenText} to="/Career" theme="purple">
+            Career
+          </LinkSquare>
         </li>
       </ul>
       <ul className="flex justify-center text-white">
         <li className="p-4 sm:p-8">
-          <LinkSquare
-            Icon={AtSign}
-            to="/Contact"
-            text="Contact"
-            bgStyles="orange"
-          />
+          <LinkSquare Icon={AtSign} to="/Contact" theme="orange">
+            Contact
+          </LinkSquare>
         </li>
         <li className="p-4 sm:p-8">
-          <LinkSquare Icon={Info} to="/About" text="About" bgStyles="green" />
+          <LinkSquare Icon={Info} to="/About" theme="green">
+            About
+          </LinkSquare>
         </li>
       </ul>
     </div>

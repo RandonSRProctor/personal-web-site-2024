@@ -3,8 +3,8 @@ import { NavLinkFastClick } from './utility/NavLinkFastClick';
 
 type LinkSquareProps = {
   to: string;
-  text: string;
-  bgStyles: 'pink' | 'purple' | 'orange' | 'green';
+  children: string;
+  theme: 'pink' | 'purple' | 'orange' | 'green';
   Icon: React.ForwardRefExoticComponent<
     Omit<LucideProps, 'ref'> & React.RefAttributes<SVGSVGElement>
   >;
@@ -20,16 +20,16 @@ const colorTheme = {
     'border border-green-400 shadow shadow-green-700 bg-gradient-to-br from-lime-400 via-green-500 to-teal-600',
 } as const;
 
-export const LinkSquare = ({ to, text, bgStyles, Icon }: LinkSquareProps) => {
+export const LinkSquare = ({ to, children, theme, Icon }: LinkSquareProps) => {
   return (
     <NavLinkFastClick
-      className={`text-md relative block flex flex-col items-center justify-end pb-2 w-40 h-36 rounded-xl hover:underline ${colorTheme[bgStyles]}`}
+      className={`text-md relative block flex flex-col items-center justify-end pb-2 w-40 h-36 rounded-xl hover:underline ${colorTheme[theme]}`}
       to={to}
     >
       <span className="absolute top-9">
         <Icon size={42} />
       </span>
-      <span>{text}</span>
+      <span>{children}</span>
     </NavLinkFastClick>
   );
 };
