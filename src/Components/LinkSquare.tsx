@@ -23,11 +23,11 @@ const colorTheme = {
 export const LinkSquare = ({ to, children, theme, Icon }: LinkSquareProps) => {
   return (
     <NavLinkFastClick
-      className={`text-md relative block flex flex-col items-center justify-end pb-2 w-40 h-36 rounded-xl hover:underline ${colorTheme[theme]}`}
+      className={`text-md relative block flex flex-col items-center justify-end pb-2 w-36 h-24 rounded-xl hover:underline ${colorTheme[theme]}`}
       to={to}
     >
-      <span className="absolute top-9">
-        <Icon size={42} />
+      <span className="absolute top-4">
+        <Icon size={36} />
       </span>
       <span>{children}</span>
     </NavLinkFastClick>
