@@ -29,7 +29,7 @@ export const SwitchContent = ({
           condition ? 'opacity-0' : 'opacity-100'
         }`}
       >
-        <IfFalseRender />
+        {condition ? null : <IfFalseRender />}
       </div>
     </>
   );
