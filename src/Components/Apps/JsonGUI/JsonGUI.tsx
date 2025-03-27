@@ -20,8 +20,8 @@ export function JsonGUI() {
   }
 
   return (
-    <div className="App">
-      <div className="CentralContent flex">
+    <div className="App border border-pink-500">
+      <div className="CentralContent flex ">
         <div className="TextInputSection">
           <div className="textareaContainer">
             <textarea

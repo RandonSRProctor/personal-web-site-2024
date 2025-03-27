@@ -6,12 +6,10 @@ export const Apps = () => {
   const location = useLocation();
   const isAppsPath = location.pathname === '/Apps';
   return (
-    <section className="">
-      <SwitchContent
-        condition={isAppsPath}
-        IfTrueRender={AppSelector}
-        IfFalseRender={Outlet}
-      />
-    </section>
+    <SwitchContent
+      condition={isAppsPath}
+      IfTrueRender={AppSelector}
+      IfFalseRender={Outlet}
+    />
   );
 };
