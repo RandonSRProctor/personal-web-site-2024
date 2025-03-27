@@ -1,28 +1,20 @@
 import { Outlet, useLocation } from 'react-router';
 import { Header } from '../Header';
 import { LandingMenu } from '../LandingMenu';
+import { SwitchContent } from '../utility/SwitchContent';
 
 export const Root = () => {
   const location = useLocation();
   const isRootPath = location.pathname === '/';
   return (
     <div className="bg-slate-800 justify-center">
-      <div className="min-h-screen m-auto max-w-[1200px] bg-slate-8 shadow-gray-600 shadow-2xl 00 p-4">
+      <div className="min-h-screen m-auto max-w-[1200px] bg-slate-8 shadow-gray-600 shadow-2xl 00 pb-4 px-4">
         <Header />
-        <section
-          className={`transition-all duration-500 ${
-            isRootPath ? 'opacity-100 h-[calc(100vh-8rem)]' : 'opacity-0'
-          }`}
-        >
-          {isRootPath ? <LandingMenu /> : null}
-        </section>
-        <section
-          className={`transition-all duration-500 ${
-            isRootPath ? 'opacity-0' : 'opacity-100 min-h-[calc(100vh-8rem)]'
-          }`}
-        >
-          <Outlet />
-        </section>
+        <SwitchContent
+          condition={isRootPath}
+          IfTrueRender={LandingMenu}
+          IfFalseRender={Outlet}
+        />
       </div>
     </div>
   );
