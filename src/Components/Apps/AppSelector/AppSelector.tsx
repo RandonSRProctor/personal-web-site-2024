@@ -13,7 +13,7 @@ export const AppSelector = () => {
         heading="Demos"
         subtext="Apps to support lectures and blog posts"
       >
-        <LinkCard to="." title="Inertia 4.0 (Water Physics Simulator)" />
+        <LinkCard to="Inertia4" title="Inertia 4.0 (Water Physics Simulator)" />
         <LinkCard to="." title="React Rendering Patterns" />
       </LinkCardGroup>
     </div>
